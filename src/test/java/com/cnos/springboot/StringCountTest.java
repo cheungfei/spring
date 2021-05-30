@@ -1,6 +1,8 @@
 package com.cnos.springboot;
 
-import org.springframework.util.StringUtils;
+//import org.apache.commons.lang3.StringUtils;
+
+//import org.springframework.util.StringUtils;
 
 import java.util.StringTokenizer;
 
@@ -13,6 +15,11 @@ public class StringCountTest {
     public static void main(String[] args) {
         String testString = "a.b.c.d";
 
+        // 00
+//        int count = StringUtils.countMatches("a.b.c.d", ".");
+//        System.out.println("count: " + count);
+
+        // 01
 //        int spring = StringUtils.countOccurrencesOf(testString, ".");
 //        System.out.println("spring = " + spring);
 //
@@ -26,8 +33,8 @@ public class StringCountTest {
 //        int replaceAllCase2 = testString.length() - testString.replaceAll("\\.", "").length();
 //        System.out.println("replaceAll (second case) = " + replaceAllCase2);
 
-//        int split = testString.split("\\.",-1).length - 1;
-//        System.out.println("split = " + split);
+        int split = testString.split("\\.",-1).length - 1;
+        System.out.println("split = " + split);
 //
 //        long java8 = testString.chars().filter(ch -> ch == '.').count();
 //        System.out.println("java8 = " + java8);
@@ -35,10 +42,7 @@ public class StringCountTest {
 //        long java8Case2 = testString.codePoints().filter(ch -> ch == '.').count();
 //        System.out.println("java8 (second case) = " + java8Case2);
 
-        int stringTokenier = new StringTokenizer(" " + testString + " ", ".").countTokens() - 1;
-        System.out.println("stringTokenizer = " + stringTokenier);
-
-
-
+//        int stringTokenier = new StringTokenizer(" " + testString + " ", ".").countTokens() - 1;
+//        System.out.println("stringTokenizer = " + stringTokenier);
     }
 }
