@@ -33,16 +33,17 @@ public class StringCountTest {
 //        int replaceAllCase2 = testString.length() - testString.replaceAll("\\.", "").length();
 //        System.out.println("replaceAll (second case) = " + replaceAllCase2);
 
-        int split = testString.split("\\.",-1).length - 1;
-        System.out.println("split = " + split);
+//        int split = testString.split("\\.",-1).length - 1;
+//        System.out.println("split = " + split);
 //
 //        long java8 = testString.chars().filter(ch -> ch == '.').count();
 //        System.out.println("java8 = " + java8);
 //
-//        long java8Case2 = testString.codePoints().filter(ch -> ch == '.').count();
-//        System.out.println("java8 (second case) = " + java8Case2);
+        long java8Case2 = testString.codePoints().filter(ch -> ch == '.').count();
+        System.out.println("java8 (second case) = " + java8Case2);
 
-//        int stringTokenier = new StringTokenizer(" " + testString + " ", ".").countTokens() - 1;
-//        System.out.println("stringTokenizer = " + stringTokenier);
+        String testString1 = "a...b.c....d";
+        int stringTokenier = new StringTokenizer(" " + testString1 + " ", ".").countTokens() - 1;
+        System.out.println("stringTokenizer = " + stringTokenier);
     }
 }
