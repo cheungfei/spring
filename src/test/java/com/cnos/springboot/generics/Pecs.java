@@ -24,7 +24,7 @@ public class Pecs {
 //        extendFruit.add(apple); // Err2  Required type: capture of ? extends Fruit
         superFruit.add((Fruit) apple);
 //        superFruit.add(new Fruit());
-        superFruit.add(new Food());
+//        superFruit.add(new Food());
         superFruit.add(new Fruit());
 
     }

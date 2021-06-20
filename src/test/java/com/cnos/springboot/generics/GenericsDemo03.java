@@ -25,13 +25,13 @@ public class GenericsDemo03 {
             System.out.println(parameterizedType.getActualTypeArguments());
         }
 
-        List<? extends Generics> genericsList = new ArrayList<>();
-        Generics generics = genericsList.get(0);
+        List<? extends GenericDemo> genericsList = new ArrayList<>();
+        GenericDemo generics = genericsList.get(0);
 //        genericsList.add(new Generics<String>());
 //        genericsList.add(new Generics());
 
-        List<? super Generics> genericsListTmp = new ArrayList<>();
-        genericsListTmp.add(new Generics());
+        List<? super GenericDemo> genericsListTmp = new ArrayList<>();
+        genericsListTmp.add(new GenericDemo());
 //        Generics genericsTmp = genericsListTmp.get(0);
 
 //        List<? extends Generics super Generics> genericsListTmp = new ArrayList<>();
