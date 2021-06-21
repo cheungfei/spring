@@ -11,9 +11,9 @@ public class Father {
     }
 }
 
-class Son extend Father {
-    @Override
-    public Interger test() {
-        return null;
-    }
+class Son extends Father {
+//    @Override
+//    public Interger test() {
+//        return null;
+//    }
 }
