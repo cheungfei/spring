@@ -1,4 +1,4 @@
-package com.cnos.springboot.stream;
+package com.cnos.springboot.nio;
 
 import java.io.File;
 import java.io.FileInputStream;
