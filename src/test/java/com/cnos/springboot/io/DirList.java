@@ -14,10 +14,12 @@ public class DirList {
     public static void main(String[] args) {
         File path = new File(".");
         String[] list;
+        list = path.list();
+        System.out.println(Arrays.toString(list));
         if (args.length == 0) {
             list = path.list();
         } else {
-            // todo: 正则表达式没搞起来
+            // .*\.dat
             list = path.list(new DirFilter(args[0]));
         }
         Arrays.sort(list, String.CASE_INSENSITIVE_ORDER);
@@ -28,7 +30,7 @@ public class DirList {
 }
 
 class DirFilter implements FilenameFilter {
-    private Pattern pattern;
+    private final Pattern pattern;
 
     public DirFilter(String regex) {
         pattern = Pattern.compile(regex);
@@ -36,6 +38,7 @@ class DirFilter implements FilenameFilter {
 
     @Override
     public boolean accept(File dir, String name) {
-        return pattern.matcher(name).matches();
+        boolean matches = pattern.matcher(name).matches();
+        return matches;
     }
 }
