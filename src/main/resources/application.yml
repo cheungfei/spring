@@ -12,6 +12,6 @@ spring:
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
 
-mybatis:
-  mapper-locations: classpath:/templates/mapper/*Mapper.xml  # mapper文件位置
-  type-aliases-package: com.tlanyan.springboot.entity
+#mybatis:
+#  mapper-locations: classpath:/templates/mapper/*Mapper.xml  # mapper文件位置
+#  type-aliases-package: com.tlanyan.springboot.entity
