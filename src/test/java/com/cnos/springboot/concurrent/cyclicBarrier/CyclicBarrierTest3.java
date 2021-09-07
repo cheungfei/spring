@@ -1,4 +1,4 @@
-package com.cnos.springboot.concurrent;
+package com.cnos.springboot.concurrent.cyclicBarrier;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;

@@ -1,4 +1,4 @@
-package com.cnos.springboot;
+package com.cnos.springboot.basic;
 
 import java.util.StringJoiner;
 import java.util.stream.IntStream;

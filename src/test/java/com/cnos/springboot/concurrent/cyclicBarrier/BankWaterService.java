@@ -1,4 +1,7 @@
-package com.cnos.springboot.concurrent;
+package com.cnos.springboot.concurrent.cyclicBarrier;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Map;
 import java.util.concurrent.BrokenBarrierException;
@@ -13,6 +16,8 @@ import java.util.concurrent.Executors;
  * @date 2021-08-12 19:43
  */
 public class BankWaterService implements Runnable {
+    private static final Logger logger = LoggerFactory.getLogger(BankWaterService.class);
+
     /**
      * 创建4个屏障，处理完之后执行当前类的run方法
      */
@@ -37,6 +42,7 @@ public class BankWaterService implements Runnable {
                 } catch (InterruptedException | BrokenBarrierException e) {
                     e.printStackTrace();
                 }
+                logger.info("线程[{}]执行结束", Thread.currentThread().getName());
             });
         }
     }
@@ -50,11 +56,12 @@ public class BankWaterService implements Runnable {
         }
         // 将结果输出
         sheetBankWaterCount.put("result", result);
-        System.out.println(result);
+        logger.info("统计汇总求和结果：{}", result);
     }
 
     public static void main(String[] args) {
         BankWaterService bankWaterCount = new BankWaterService();
         bankWaterCount.count();
+        logger.info("Main线程[{}]执行结束", Thread.currentThread().getName());
     }
 }

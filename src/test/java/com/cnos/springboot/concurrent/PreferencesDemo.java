@@ -1,4 +1,4 @@
-package com.cnos.springboot;
+package com.cnos.springboot.concurrent;
 
 import java.util.prefs.BackingStoreException;
 import java.util.prefs.Preferences;

@@ -1,5 +1,7 @@
 package com.cnos.springboot.concurrent.instance1;
 
+import com.cnos.springboot.concurrent.lock.TravelTask;
+
 import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;

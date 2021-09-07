@@ -1,5 +1,7 @@
 package com.cnos.springboot.concurrent.instance;
 
+import com.cnos.springboot.concurrent.lock.Searcher;
+
 import java.util.concurrent.CyclicBarrier;
 
 /**

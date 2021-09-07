@@ -1,4 +1,4 @@
-package com.cnos.springboot;
+package com.cnos.springboot.basic;
 
 //import org.apache.commons.lang3.StringUtils;
 

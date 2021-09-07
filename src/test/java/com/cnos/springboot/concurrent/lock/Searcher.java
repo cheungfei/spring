@@ -1,4 +1,7 @@
-package com.cnos.springboot.concurrent.instance;
+package com.cnos.springboot.concurrent.lock;
+
+import com.cnos.springboot.concurrent.instance.MatrixMock;
+import com.cnos.springboot.concurrent.instance.Results;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;

@@ -1,4 +1,4 @@
-package com.cnos.springboot.concurrent;
+package com.cnos.springboot.concurrent.future;
 
 import java.util.concurrent.CompletableFuture;
 
