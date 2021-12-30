@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.cnos.springboot.mapper.UserMapper">
+<mapper namespace="com.fiora.study.mapper.UserMapper">
 
-    <select id="findById" resultType="com.cnos.springboot.entity.User">
+    <select id="findById" resultType="com.fiora.study.entity.User">
         SELECT * from user WHERE id = #{id}
     </select>
 
-    <select id="getAll" resultType="com.cnos.springboot.entity.User">
+    <select id="getAll" resultType="com.fiora.study.entity.User">
         select * from user
     </select>
 
