@@ -1,0 +1,3 @@
+创建JavaConfig类的关键在于为其添加@Configuration注解，@Configuration注解表
+明这个类是一个配置类，该类应该包含在Spring应用上下文中如何创建bean的细节。
+
