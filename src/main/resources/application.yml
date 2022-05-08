@@ -1,6 +1,10 @@
 server:
   port: 9000
 
+logging:
+  level: info
+  config:
+
 spring:
   freemarker:
     template-loader-path: classpath:/templates

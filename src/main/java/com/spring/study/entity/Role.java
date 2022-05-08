@@ -6,15 +6,12 @@ import lombok.Data;
 /**
  * @author zhangfei
  * @version 1.0
- * @date 2021-04-18 17:28
+ * @date 2022-05-08 15:32
  */
 @AllArgsConstructor
 @Data
-public class User {
+public class Role {
     private Long id;
-    private String username;
-    private String password;
-    private String phoneNum;
-    private String email;
-    private Role role;
+    private String roleName;
+    private String description;
 }
