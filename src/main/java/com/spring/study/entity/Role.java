@@ -10,12 +10,12 @@ import lombok.NoArgsConstructor;
  * @version 1.0
  * @date 2022-05-08 15:32
  */
-@AllArgsConstructor
-@NoArgsConstructor
 @Data
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Role {
-//    private Long id;
-//    private String roleName;
-//    private String description;
+    private Long id;
+    private String roleName;
+    private String description;
 }
