@@ -8,7 +8,8 @@ package com.spring.study.component;
  * 注解的值将被用于监听用户连接的终端访问URL地址,客户端可以通过这个URL来连接到WebSocket服务器端
  */
 
-import lombok.extern.slf4j.Slf4j;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
@@ -23,10 +24,11 @@ import java.io.IOException;
 import java.util.concurrent.CopyOnWriteArraySet;
 
 @Component
-@Slf4j
 @Service
 @ServerEndpoint("/api/websocket/{sid}")
 public class WebSocketServer {
+    private static final Logger logger = LogManager.getLogger(WebSocketServer.class);
+
     /**
      * 静态变量，用来记录当前在线连接数。应该把它设计成线程安全的。
      */
@@ -58,9 +60,9 @@ public class WebSocketServer {
         addOnlineCount();           //在线数加1
         try {
             sendMessage("conn_success");
-            log.info("有新窗口开始监听:" + sid + ",当前在线人数为:" + getOnlineCount());
+            logger.info("有新窗口开始监听:" + sid + ",当前在线人数为:" + getOnlineCount());
         } catch (IOException e) {
-            log.error("websocket IO Exception");
+            logger.error("websocket IO Exception");
         }
     }
 
@@ -74,9 +76,9 @@ public class WebSocketServer {
         //在线数减1
         subOnlineCount();
         //断开连接情况下，更新主板占用情况为释放
-        log.info("释放的sid为："+sid);
+        logger.info("释放的sid为："+sid);
         //这里写你释放的时候，要处理的业务
-        log.info("有一连接关闭！当前在线人数为" + getOnlineCount());
+        logger.info("有一连接关闭！当前在线人数为" + getOnlineCount());
     }
 
     /**
@@ -85,7 +87,7 @@ public class WebSocketServer {
      */
     @OnMessage
     public void onMessage(String message, Session session) {
-        log.info("收到来自窗口" + sid + "的信息:" + message);
+        logger.info("收到来自窗口" + sid + "的信息:" + message);
         //群发消息
         for (WebSocketServer item : webSocketSet) {
             try {
@@ -102,7 +104,7 @@ public class WebSocketServer {
      */
     @OnError
     public void onError(Session session, Throwable error) {
-        log.error("发生错误");
+        logger.error("发生错误");
         error.printStackTrace();
     }
 
@@ -117,7 +119,7 @@ public class WebSocketServer {
      * 群发自定义消息
      */
     public static void sendInfo(String message, @PathParam("sid") String sid) throws IOException {
-        log.info("推送消息到窗口" + sid + "，推送内容:" + message);
+        logger.info("推送消息到窗口" + sid + "，推送内容:" + message);
 
         for (WebSocketServer item : webSocketSet) {
             try {
